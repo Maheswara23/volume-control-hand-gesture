@@ -27,6 +27,23 @@ Contains the `HandDetector` class for detecting and extracting hand landmark pos
 - **`findHands(img, draw=True)`**: Converts the BGR image to RGB, processes it through MediaPipe, and draws landmarks on the image.
 - **`findPosition(img, handNo=0, draw=True)`**: Returns a list of landmarks with their (x, y) coordinates.
 
+### 🔹 VolumeHandControl.py
+The main script that:
+
+Captures video from the webcam.
+
+Uses HandDetector to find finger positions.
+
+Calculates distance between thumb tip (id 4) and index finger tip (id 8).
+
+Maps this distance to the system volume range using np.interp().
+
+Adjusts volume using pycaw.
+
+Displays a volume bar and frame rate.
+
+---
+
 ## ✨ Features
 
 - Real-time hand tracking using MediaPipe
@@ -34,6 +51,15 @@ Contains the `HandDetector` class for detecting and extracting hand landmark pos
 - Visual volume bar and percentage overlay
 - FPS counter to monitor performance
 - Touchless user interface ideal for smart environments and accessibility
+
+## 💡 Extra Features:
+Circle highlights if fingers are close (gesture limit).
+
+Volume percentage displayed on screen.
+
+Real-time FPS counter.
+
+
 
 ## 🛠️ Tech Stack
 
